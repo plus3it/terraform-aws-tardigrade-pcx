@@ -1,5 +1,6 @@
 variable "create_peering_connection" {
   description = "Controls whether to create the VPC Peering Connection"
+  type        = bool
   default     = true
 }
 
