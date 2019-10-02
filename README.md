@@ -6,7 +6,7 @@ Terraform module to create a peering connection
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| create\_peering\_connection | Controls whether to create the VPC Peering Connection | string | `"true"` | no |
+| create\_peering\_connection | Controls whether to create the VPC Peering Connection | bool | `"true"` | no |
 | name | Name of the account; used to construct PCX Name tag | string | `"null"` | no |
 | peer\_alias | Alias of the peer account; used to construct PCX Name tag | string | `"null"` | no |
 | peer\_owner\_id | The AWS account ID of the owner of the peer VPC. Required when `create_peering_connection` is `true` | string | `"null"` | no |
