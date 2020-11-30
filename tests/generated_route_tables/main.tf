@@ -43,11 +43,11 @@ module "generated_route_tables" {
     aws.peer = aws
   }
 
-  create_peering_connection = true
-  name                      = "tardigrade-pcx-${random_string.this.result}"
-  vpc_id                    = module.vpc_pcx_requester.vpc_id
-  peer_owner_id             = data.aws_caller_identity.current.account_id
-  peer_vpc_id               = module.vpc_pcx_requestee.vpc_id
-  public_route_tables       = module.vpc_pcx_requester.public_route_table_ids
-  private_route_tables      = module.vpc_pcx_requester.private_route_table_ids
+
+  name                 = "tardigrade-pcx-${random_string.this.result}"
+  vpc_id               = module.vpc_pcx_requester.vpc_id
+  peer_owner_id        = data.aws_caller_identity.current.account_id
+  peer_vpc_id          = module.vpc_pcx_requestee.vpc_id
+  public_route_tables  = module.vpc_pcx_requester.public_route_table_ids
+  private_route_tables = module.vpc_pcx_requester.private_route_table_ids
 }

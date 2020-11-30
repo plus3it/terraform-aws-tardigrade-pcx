@@ -1,8 +1,3 @@
-variable "create_peering_connection" {
-  description = "Controls whether to create the VPC Peering Connection"
-  type        = bool
-  default     = true
-}
 
 variable "name" {
   description = "Name of the account; used to construct PCX Name tag"

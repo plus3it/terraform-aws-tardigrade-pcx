@@ -40,9 +40,8 @@ module "create_pcx" {
     aws.peer = aws
   }
 
-  create_peering_connection = true
-  name                      = "tardigrade-pcx-${random_string.this.result}"
-  vpc_id                    = module.vpc_pcx_requester.vpc_id
-  peer_owner_id             = data.aws_caller_identity.current.account_id
-  peer_vpc_id               = module.vpc_pcx_requestee.vpc_id
+  name          = "tardigrade-pcx-${random_string.this.result}"
+  vpc_id        = module.vpc_pcx_requester.vpc_id
+  peer_owner_id = data.aws_caller_identity.current.account_id
+  peer_vpc_id   = module.vpc_pcx_requestee.vpc_id
 }
