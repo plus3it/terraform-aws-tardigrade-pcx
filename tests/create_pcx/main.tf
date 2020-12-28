@@ -1,8 +1,8 @@
-provider aws {
+provider "aws" {
   region = "us-east-1"
 }
 
-module create_pcx {
+module "create_pcx" {
   source = "../../"
   providers = {
     aws      = aws
@@ -21,21 +21,21 @@ module create_pcx {
   }
 }
 
-module vpc_pcx_requester {
+module "vpc_pcx_requester" {
   source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v2.15.0"
 
   name = "tardigrade-pcx-requester-${random_string.this.result}"
   cidr = "10.0.0.0/16"
 }
 
-module vpc_pcx_requestee {
+module "vpc_pcx_requestee" {
   source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v2.15.0"
 
   name = "tardigrade-pcx-requestee-${random_string.this.result}"
   cidr = "10.1.0.0/16"
 }
 
-resource random_string this {
+resource "random_string" "this" {
   length  = 6
   number  = false
   special = false
