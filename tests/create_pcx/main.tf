@@ -1,9 +1,6 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
 module "create_pcx" {
   source = "../../"
+
   providers = {
     aws      = aws
     aws.peer = aws
