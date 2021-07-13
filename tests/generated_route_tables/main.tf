@@ -1,9 +1,6 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
 module "generated_route_tables" {
   source = "../../"
+
   providers = {
     aws      = aws
     aws.peer = aws
