@@ -29,7 +29,7 @@ module "vpc_pcx_requester" {
 }
 
 module "vpc_pcx_requestee" {
-  source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v3.6.0"
+  source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v3.7.0"
 
   name = "tardigrade-pcx-requestee-${random_string.this.result}"
   cidr = "10.1.0.0/16"
