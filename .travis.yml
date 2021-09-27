@@ -16,6 +16,8 @@ before_install:
   - sudo systemctl daemon-reload
   - sudo systemctl restart docker
   - docker system info
+  - echo "configure iptables to set MTU"
+  - sudo iptables -t mangle -A POSTROUTING -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 
 jobs:
   include:
