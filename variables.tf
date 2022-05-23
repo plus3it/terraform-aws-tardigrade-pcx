@@ -9,40 +9,27 @@ variable "peer_vpc_id" {
   type        = string
 }
 
-variable "private_subnets" {
-  description = "A list of private subnets inside the VPC"
-  type        = list(string)
-  default     = []
-}
-
-variable "public_subnets" {
-  description = "A list of public subnets inside the VPC"
-  type        = list(string)
-  default     = []
-}
-
-variable "private_route_tables" {
-  description = "List of IDs of private route tables to route to the peer VPC CIDR"
-  type        = list(string)
-  default     = []
-}
-
-variable "public_route_tables" {
-  description = "List of IDs of public route tables to route to the peer VPC CIDR"
-  type        = list(string)
-  default     = []
-}
-
-variable "peer_route_tables" {
-  description = "List of IDs of route tables in the peer account to route to the account VPC CIDR"
-  type        = list(string)
-  default     = []
-}
-
 variable "peer_tags" {
   description = "Map of tags to add to the peer-side of the VPC peering connection"
   type        = map(string)
   default     = {}
+}
+
+variable "routes" {
+  description = "List of VPC route objects with a target of the peering connection"
+  type = list(object({
+    # `name` is used as for_each key
+    name                        = string
+    provider                    = string
+    route_table_id              = string
+    destination_cidr_block      = string
+    destination_ipv6_cidr_block = string
+  }))
+  default = []
+  validation {
+    condition     = length(setsubtract(var.routes[*].provider, ["aws", "aws.peer"])) == 0
+    error_message = "The `provider` attribute for each VPC route must be one of: \"aws\", \"aws.peer\"."
+  }
 }
 
 variable "tags" {
