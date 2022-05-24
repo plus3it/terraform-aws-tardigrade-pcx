@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+### 3.0.0
+
+**Released**: 2022.05.23
+
+**Commit Delta**: [Change from 2.0.2 release](https://github.com/plus3it/terraform-aws-tardigrade-pcx/compare/2.0.2...3.0.0)
+
+**Summary**:
+
+*   Module rewrite to be less opinionated. Biggest change is the removal of
+    "public" and "private" route constructs. All routes are now passed in the
+    list of "route" objects.
+
 ### 1.0.2
 
 **Released**: 2019.10.28
