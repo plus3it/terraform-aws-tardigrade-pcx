@@ -30,7 +30,7 @@ module "vpc_pcx_requester" {
 }
 
 module "vpc_pcx_accepter" {
-  source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v5.5.2"
+  source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v5.5.3"
 
   name            = "tardigrade-pcx-accepter-${random_string.this.result}"
   cidr            = "10.1.0.0/16"
