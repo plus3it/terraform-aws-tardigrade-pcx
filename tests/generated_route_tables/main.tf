@@ -20,7 +20,7 @@ module "generated_route_tables" {
 }
 
 module "vpc_pcx_requester" {
-  source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v5.7.1"
+  source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v5.8.0"
 
   name            = "tardigrade-pcx-requester-${random_string.this.result}"
   cidr            = "10.0.0.0/16"
