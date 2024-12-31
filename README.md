@@ -48,7 +48,7 @@ make mockstack/clean
 | <a name="input_peer_vpc_id"></a> [peer\_vpc\_id](#input\_peer\_vpc\_id) | The ID of the VPC with which you are creating the VPC Peering Connection | `string` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | The ID of the requester VPC | `string` | n/a | yes |
 | <a name="input_peer_tags"></a> [peer\_tags](#input\_peer\_tags) | Map of tags to add to the peer-side of the VPC peering connection | `map(string)` | `{}` | no |
-| <a name="input_routes"></a> [routes](#input\_routes) | List of VPC route objects with a target of the peering connection | <pre>list(object({<br>    # `name` is used as for_each key<br>    name                        = string<br>    provider                    = string<br>    route_table_id              = string<br>    destination_cidr_block      = string<br>    destination_ipv6_cidr_block = string<br>  }))</pre> | `[]` | no |
+| <a name="input_routes"></a> [routes](#input\_routes) | List of VPC route objects with a target of the peering connection | <pre>list(object({<br/>    # `name` is used as for_each key<br/>    name                        = string<br/>    provider                    = string<br/>    route_table_id              = string<br/>    destination_cidr_block      = string<br/>    destination_ipv6_cidr_block = string<br/>  }))</pre> | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Map of tags to add to the requester VPC peering connection | `map(string)` | `{}` | no |
 
 ## Outputs
