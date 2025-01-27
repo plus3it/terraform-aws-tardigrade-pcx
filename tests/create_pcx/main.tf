@@ -19,7 +19,7 @@ module "create_pcx" {
 }
 
 module "vpc_pcx_requester" {
-  source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v5.17.0"
+  source = "github.com/terraform-aws-modules/terraform-aws-vpc?ref=v5.18.0"
 
   name = "tardigrade-pcx-requester-${random_string.this.result}"
   cidr = "10.0.0.0/16"
